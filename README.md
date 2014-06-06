@@ -1,9 +1,20 @@
-django-improved-cache-middleware
-================================
-
-Improved cache middleware for Django.
+Improved cache middleware for Django
+====================================
 
 **Tested against Django 1.2.x**
+
+**Note: this project has just been moved from Google Code, with some
+modifications, so consider it untested.**
+
+Usage
+-----
+
+1. Add `django_cache_middleware` to the top of your `settings.INSTALLED_APPS`.
+
+This will monkey-patch Django to automatically use this library's middleware
+instead of `django.middleware.cache.CacheMiddleware` - assuming that is
+already in your `settings.MIDDLEWARE_CLASSES`.
+
 
 What is improved?
 -----------------
@@ -23,7 +34,7 @@ Features
   * Returns "304 Not Modified" responses when it can, saving bandwidth and
     speeding up the user experience. Caches more situations effectively
     than Django's built-in middleware.
-* [@vary_on_view decorator](docs/features.md#vary-on-view-decorator)
+* [@vary_on_view decorator](docs/features.md#vary_on_view-decorator)
   * Provides specific control over view caching, without you having to write
     any caching code.
 * [Strip cookies middleware](docs/features.md#strip-cookies-middleware)
